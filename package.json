@@ -1,0 +1,19 @@
+{
+  "name": "keyword-farmer",
+  "version": "0.0.0",
+  "description": "keyword-farmer",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kis0421/keyword-farmer.git"
+  },
+  "author": "kis0421",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kis0421/keyword-farmer/issues"
+  },
+  "homepage": "https://github.com/kis0421/keyword-farmer#readme"
+}
