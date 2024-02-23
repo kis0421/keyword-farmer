@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "description": "keyword-farmer",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node --esm src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
+    "ts-node": "^10.9.2",    
     "typescript": "^5.3.3"
   }
 }
