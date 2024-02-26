@@ -3,7 +3,7 @@ env:
   es2021: true
 extends: standard-with-typescript
 parserOptions:
-  project: false
+  project: ["./tsconfig.json"]
   ecmaVersion: latest
   sourceType: module
-rules: {}
+rules: { "@typescript-eslint/explicit-function-return-type": "off" }
