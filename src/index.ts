@@ -37,8 +37,12 @@ const useKeywordFarm = (option?: Option) => {
       return previous;
     }, []);
 
-  const create = () => {
-    return currentKeyword[Math.floor(Math.random() * currentKeyword.length)];
+  const create = (count?: number) => {
+    return count !== undefined
+      ? new Array(count)
+        .fill(false)
+        .map(() => currentKeyword[Math.floor(Math.random() * currentKeyword.length)])
+      : currentKeyword[Math.floor(Math.random() * currentKeyword.length)];
   };
   return { create };
 };
