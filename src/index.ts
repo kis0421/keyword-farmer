@@ -1,4 +1,4 @@
-import { keywords } from './assets/ko/keywords';
+import keywords from './assets/ko/keywords';
 
 interface Option {
   loop?: boolean
