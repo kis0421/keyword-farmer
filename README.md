@@ -4,7 +4,7 @@ If you use this, you are a farmer.
 
 Build and harvest a farm with the crops you want.
 
-We provide you with farm products (**static search keywrods**)
+We provide you with farm products (**static search keywords**)
 
 ## Installation:
 ___
