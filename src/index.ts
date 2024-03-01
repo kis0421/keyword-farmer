@@ -44,7 +44,8 @@ const useKeywordFarm = (option?: Option) => {
         .map(() => currentKeyword[Math.floor(Math.random() * currentKeyword.length)])
       : currentKeyword[Math.floor(Math.random() * currentKeyword.length)];
   };
-  return { create };
+
+  return { create, keywords: currentKeyword };
 };
 
 export { useKeywordFarm };
