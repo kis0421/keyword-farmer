@@ -2,7 +2,7 @@ import { keywords } from './assets/ko/keywords';
 
 interface Option {
   loop?: boolean
-  keywordLength?: number | { min?: number, max?: number }
+  length?: number | { min?: number, max?: number }
   excludeSpaces?: boolean
 }
 const useKeywordFarm = (option?: Option) => {
@@ -12,13 +12,13 @@ const useKeywordFarm = (option?: Option) => {
       let targetKeyword = '';
 
       // option.keywordLength case
-      if (option.keywordLength !== undefined) {
-        if (typeof option.keywordLength === 'object') {
-          if ((current.length >= (option.keywordLength?.min ?? 1)) && (current.length <= (option.keywordLength.max ?? Infinity))) {
+      if (option.length !== undefined) {
+        if (typeof option.length === 'object') {
+          if ((current.length >= (option.length?.min ?? 1)) && (current.length <= (option.length.max ?? Infinity))) {
             targetKeyword = current;
           }
-        } else if (typeof option.keywordLength === 'number') {
-          if (current.length === option.keywordLength) {
+        } else if (typeof option.length === 'number') {
+          if (current.length === option.length) {
             targetKeyword = current;
           }
         } else {
