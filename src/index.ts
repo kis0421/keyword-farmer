@@ -1,11 +1,16 @@
-import keywords from './assets/ko/keywords';
+import keywords, { specialKeywords } from './assets/ko/keywords';
 
 interface Option {
   loop?: boolean
   length?: number | { min?: number, max?: number }
   excludeSpaces?: boolean
+  specialCrops?: 'only' | 'mixed' | 'combine'
 }
+
 const useKeywordFarm = (option?: Option) => {
+  if (option?.specialCrops === 'only') {
+    return specialKeywords;
+  }
   const currentKeyword = option === undefined
     ? keywords
     : keywords.reduce<string[]>((previous, current) => {
