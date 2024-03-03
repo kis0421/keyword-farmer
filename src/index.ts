@@ -41,15 +41,19 @@ const useKeywordFarm = (option?: Option) => {
         return previous;
       }, []);
 
+  const totalKeywords: string[] = option?.specialCrops === 'mixed'
+    ? [...currentKeyword, ...specialKeywords]
+    : currentKeyword;
+
   const create = (count?: number) => {
     return count !== undefined
       ? new Array(count)
         .fill(false)
-        .map(() => currentKeyword[Math.floor(Math.random() * currentKeyword.length)])
-      : currentKeyword[Math.floor(Math.random() * currentKeyword.length)];
+        .map(() => keywords[Math.floor(Math.random() * keywords.length)])
+      : keywords[Math.floor(Math.random() * keywords.length)];
   };
 
-  return { create, keywords: currentKeyword };
+  return { create, totalKeywords };
 };
 
 export { useKeywordFarm };
