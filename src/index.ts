@@ -1,6 +1,6 @@
 import { specialKeywords, ko, en } from './assets';
 
-interface Option {
+interface useKeywordFarmInterface {
   lang?: 'en' | 'kr'
   loop?: boolean
   length?: number | { min?: number, max?: number }
@@ -8,7 +8,7 @@ interface Option {
   specialKeywords?: 'only' | 'mixed' | 'combine'
 }
 
-const useKeywordFarm = (option?: Option) => {
+const useKeywordFarm = (option?: useKeywordFarmInterface) => {
   const originKeywords = option?.lang === 'kr'
     ? ko
     : en;
