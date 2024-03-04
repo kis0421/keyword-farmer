@@ -4,13 +4,13 @@ interface Option {
   loop?: boolean
   length?: number | { min?: number, max?: number }
   excludeSpaces?: boolean
-  specialCrops?: 'only' | 'mixed' | 'combine'
+  specialKeywords?: 'only' | 'mixed' | 'combine'
 }
 
 const useKeywordFarm = (option?: Option) => {
   const currentKeyword = option === undefined
     ? keywords
-    : option?.specialCrops === 'only'
+    : option?.specialKeywords === 'only'
       ? specialKeywords
       : keywords.reduce<string[]>((previous, current) => {
         let targetKeyword = '';
@@ -41,7 +41,7 @@ const useKeywordFarm = (option?: Option) => {
         return previous;
       }, []);
 
-  const allKeywords: string[] = option?.specialCrops === 'mixed'
+  const allKeywords: string[] = option?.specialKeywords === 'mixed'
     ? [...currentKeyword, ...specialKeywords]
     : currentKeyword;
 
