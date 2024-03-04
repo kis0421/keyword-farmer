@@ -1,6 +1,7 @@
-import pureKeywords, { specialKeywords } from './assets/ko/keywords';
+import { specialKeywords, ko, en } from './assets';
 
 interface Option {
+  lang?: 'en' | 'kr'
   loop?: boolean
   length?: number | { min?: number, max?: number }
   excludeSpaces?: boolean
@@ -8,11 +9,14 @@ interface Option {
 }
 
 const useKeywordFarm = (option?: Option) => {
+  const originKeywords = option?.lang === 'kr'
+    ? ko
+    : en;
   const currentKeyword = option === undefined
-    ? pureKeywords
+    ? originKeywords
     : option?.specialKeywords === 'only'
       ? specialKeywords
-      : pureKeywords.reduce<string[]>((previous, current) => {
+      : originKeywords.reduce<string[]>((previous, current) => {
         let targetKeyword = '';
 
         // option.keywordLength case
@@ -49,11 +53,11 @@ const useKeywordFarm = (option?: Option) => {
     return count !== undefined
       ? new Array(count)
         .fill(false)
-        .map(() => pureKeywords[Math.floor(Math.random() * pureKeywords.length)])
-      : pureKeywords[Math.floor(Math.random() * pureKeywords.length)];
+        .map(() => originKeywords[Math.floor(Math.random() * originKeywords.length)])
+      : originKeywords[Math.floor(Math.random() * originKeywords.length)];
   };
 
   return { create, keywords };
 };
 
-export { useKeywordFarm, pureKeywords, specialKeywords };
+export { useKeywordFarm, specialKeywords };
