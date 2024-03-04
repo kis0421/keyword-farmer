@@ -7,13 +7,11 @@ Build and harvest a farm with the crops you want.
 We provide you with farm products (**static search keywords**)
 
 ## Installation:
-___
 ```js
 npm install keyword-farmer
 ```
 
 ## Example:
-___
 ```js
 inport { useKeywordFarm } from 'keyword-farmer';
 
