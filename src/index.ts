@@ -41,6 +41,13 @@ const useKeywordFarm = (option?: Option) => {
           current = current.replaceAll(' ', '');
         }
 
+        if (option.specialKeywords === 'combine') {
+          const chars = targetKeyword.split('');
+          // TODO: use toSpliced()
+          chars.splice(Math.floor(Math.random() * chars.length), 0, specialKeywords[Math.floor(Math.random() * specialKeywords.length)]);
+          targetKeyword = chars.join('');
+        }
+
         previous.push(targetKeyword);
         return previous;
       }, []);
@@ -59,14 +66,5 @@ const useKeywordFarm = (option?: Option) => {
 
   return { create, keywords };
 };
-
-const { create } = useKeywordFarm({
-  lang: 'kr',
-  specialKeywords: 'combine'
-});
-
-for (let i = 0; i < 10; i++) {
-  console.log(create());
-}
 
 export { useKeywordFarm, specialKeywords };
