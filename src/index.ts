@@ -53,11 +53,20 @@ const useKeywordFarm = (option?: Option) => {
     return count !== undefined
       ? new Array(count)
         .fill(false)
-        .map(() => originKeywords[Math.floor(Math.random() * originKeywords.length)])
-      : originKeywords[Math.floor(Math.random() * originKeywords.length)];
+        .map(() => keywords[Math.floor(Math.random() * keywords.length)])
+      : keywords[Math.floor(Math.random() * keywords.length)];
   };
 
   return { create, keywords };
 };
+
+const { create } = useKeywordFarm({
+  lang: 'kr',
+  specialKeywords: 'combine'
+});
+
+for (let i = 0; i < 10; i++) {
+  console.log(create());
+}
 
 export { useKeywordFarm, specialKeywords };
