@@ -53,7 +53,7 @@ const useKeywordFarm = (option?: Option) => {
       : keywords[Math.floor(Math.random() * keywords.length)];
   };
 
-  return { create, totalKeywords: allKeywords };
+  return { create, allKeywords };
 };
 
 export { useKeywordFarm };
