@@ -1,4 +1,4 @@
-import keywords, { specialKeywords } from './assets/ko/keywords';
+import pureKeywords, { specialKeywords } from './assets/ko/keywords';
 
 interface Option {
   loop?: boolean
@@ -9,10 +9,10 @@ interface Option {
 
 const useKeywordFarm = (option?: Option) => {
   const currentKeyword = option === undefined
-    ? keywords
+    ? pureKeywords
     : option?.specialKeywords === 'only'
       ? specialKeywords
-      : keywords.reduce<string[]>((previous, current) => {
+      : pureKeywords.reduce<string[]>((previous, current) => {
         let targetKeyword = '';
 
         // option.keywordLength case
@@ -41,7 +41,7 @@ const useKeywordFarm = (option?: Option) => {
         return previous;
       }, []);
 
-  const allKeywords: string[] = option?.specialKeywords === 'mixed'
+  const keywords: string[] = option?.specialKeywords === 'mixed'
     ? [...currentKeyword, ...specialKeywords]
     : currentKeyword;
 
@@ -49,11 +49,11 @@ const useKeywordFarm = (option?: Option) => {
     return count !== undefined
       ? new Array(count)
         .fill(false)
-        .map(() => keywords[Math.floor(Math.random() * keywords.length)])
-      : keywords[Math.floor(Math.random() * keywords.length)];
+        .map(() => pureKeywords[Math.floor(Math.random() * pureKeywords.length)])
+      : pureKeywords[Math.floor(Math.random() * pureKeywords.length)];
   };
 
-  return { create, allKeywords };
+  return { create, keywords };
 };
 
-export { useKeywordFarm };
+export { useKeywordFarm, pureKeywords, specialKeywords };
