@@ -38,7 +38,7 @@ const useKeywordFarm = (option?: Option) => {
 
         // option.excludeSpaces case
         if (option.excludeSpaces ?? false) {
-          current = current.replaceAll(' ', '');
+          targetKeyword = targetKeyword.replaceAll(' ', '');
         }
 
         if (option.specialKeywords === 'combine') {
