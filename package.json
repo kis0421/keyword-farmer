@@ -3,20 +3,36 @@
   "version": "0.0.0",
   "description": "keyword-farmer",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kis0421/keyword-farmer.git"
   },
-  "author": "kis0421",
+  "author": "kis0421 <kig0421@gmail.com>",
+  "contributors": [
+    "kis0421 <kig0421@gmail.com>"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kis0421/keyword-farmer/issues"
   },
   "homepage": "https://github.com/kis0421/keyword-farmer#readme",
+  "keywords": [
+    "mock",
+    "mock-data",
+    "test",
+    "jest",
+    "static",
+    "keyword",
+    "word",
+    "random-word",
+    "random-keywords"
+  ],
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
