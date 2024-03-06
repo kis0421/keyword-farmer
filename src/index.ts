@@ -22,7 +22,7 @@ const useKeywordFarm = (option?: useKeywordFarmInterface) => {
         // option.keywordLength case
         if (option.length !== undefined) {
           if (typeof option.length === 'object') {
-            if ((current.length >= (option.length?.min ?? 1)) && (current.length <= (option.length.max ?? Infinity))) {
+            if ((current.length >= (option.length?.min ?? 1)) && (current.length <= (option.length.max ?? Number.MAX_SAFE_INTEGER))) {
               targetKeyword = current;
             }
           } else if (typeof option.length === 'number') {
