@@ -53,7 +53,7 @@ const useKeywordFarm = (option?: Config) => {
         return previous;
       }, []);
 
-  const keywords: string[] = option?.specialKeywords === 'mixed'
+  const keywords = option?.specialKeywords === 'mixed'
     ? [...currentKeyword, ...specialKeywords]
     : currentKeyword;
 
