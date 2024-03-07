@@ -1,7 +1,7 @@
 {
   "name": "keyword-farmer",
-  "version": "1.0.2",
-  "description": "keyword-farmer",
+  "version": "1.0.3",
+  "description": "keyword-farmer is quickly and easily generate fake data for mocking",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
