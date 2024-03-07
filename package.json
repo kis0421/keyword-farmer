@@ -28,9 +28,12 @@
   "homepage": "https://github.com/kis0421/keyword-farmer#readme",
   "keywords": [
     "mock",
+    "mocking",
     "fake",
-    "mock-data",
+    "faker",
+    "data",
     "test",
+    "generator",
     "jest",
     "static",
     "keyword",
