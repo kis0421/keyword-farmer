@@ -21,7 +21,7 @@ const useKeywordFarm = (option?: Config) => {
 
         // option.keywordLength case
         if (option.length !== undefined) {
-          if (typeof option.length === 'object') {
+          if (typeof option.length === 'object' && (typeof option.length.min === 'number' || typeof option.length.max === 'number')) {
             if ((current.length >= (option.length?.min ?? 1)) && (current.length <= (option.length.max ?? Number.MAX_SAFE_INTEGER))) {
               targetKeyword = current;
             }
