@@ -2,7 +2,6 @@
 ## Overview
 If you use this, you are a farmer.  
 Build and harvest a farm with the crops you want.  
-<br/>
 Like a farmer tending his farm, create keywords  
 It will provide you mock keywords data.  
 
@@ -24,7 +23,7 @@ create();
 
 ## Options
 ```ts
-interface useKeywordFarmInterface {
+interface Config {
   lang?: 'en' | 'kr'
   length?: number | { min?: number, max?: number }
   excludeSpaces?: boolean
