@@ -30,7 +30,7 @@ const useKeywordFarm = (option?: useKeywordFarmInterface) => {
               targetKeyword = current;
             }
           } else {
-            // TODO: error
+            throw new Error('invalid option.length type');
           }
         } else {
           targetKeyword = current;
@@ -67,4 +67,4 @@ const useKeywordFarm = (option?: useKeywordFarmInterface) => {
   return { create, keywords };
 };
 
-export { useKeywordFarm, specialKeywords };
+export { useKeywordFarm };
