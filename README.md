@@ -2,7 +2,9 @@
 ## Overview
 If you use this, you are a farmer.  
 Build and harvest a farm with the crops you want.  
-We provide you with farm products (**static search keywords**)
+<br/>
+Like a farmer tending his farm, create keywords  
+It will provide you mock keywords data.  
 
 ## Installation
 ```
@@ -11,7 +13,7 @@ npm install keyword-farmer
 
 ## Example
 ```ts
-inport { useKeywordFarm } from 'keyword-farmer';
+import { useKeywordFarm } from 'keyword-farmer';
 
 const { create } =  useKeywordFarm();
 
