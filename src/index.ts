@@ -2,12 +2,13 @@ import { specialKeywords, ko, en } from './assets';
 
 interface Config {
   lang?: 'en' | 'kr'
-  loop?: boolean
   length?: number | { min?: number, max?: number }
   excludeSpaces?: boolean
   specialKeywords?: 'only' | 'mixed' | 'combine'
 }
 
+const getRandomIndex = (arr: string[]) => Math.floor(Math.random() * arr.length);
+const getRandomValue = (arr: string[]) => arr[getRandomIndex(arr)];
 const useKeywordFarm = (option?: Config) => {
   const originKeywords = option?.lang === 'kr'
     ? ko
@@ -19,7 +20,7 @@ const useKeywordFarm = (option?: Config) => {
       : originKeywords.reduce<string[]>((previous, current) => {
         let targetKeyword = '';
 
-        // option.keywordLength case
+        // option.length use case
         if (option.length !== undefined) {
           if (typeof option.length === 'object' && (typeof option.length.min === 'number' || typeof option.length.max === 'number')) {
             if ((current.length >= (option.length?.min ?? 1)) && (current.length <= (option.length.max ?? Number.MAX_SAFE_INTEGER))) {
@@ -44,7 +45,7 @@ const useKeywordFarm = (option?: Config) => {
         if (option.specialKeywords === 'combine') {
           const chars = targetKeyword.split('');
           // TODO: use toSpliced()
-          chars.splice(Math.floor(Math.random() * chars.length), 0, specialKeywords[Math.floor(Math.random() * specialKeywords.length)]);
+          chars.splice(getRandomIndex(chars), 0, getRandomValue(specialKeywords));
           targetKeyword = chars.join('');
         }
 
@@ -60,8 +61,8 @@ const useKeywordFarm = (option?: Config) => {
     return count !== undefined
       ? new Array(count)
         .fill(false)
-        .map(() => keywords[Math.floor(Math.random() * keywords.length)])
-      : keywords[Math.floor(Math.random() * keywords.length)];
+        .map(() => getRandomValue(keywords))
+      : getRandomValue(keywords);
   };
 
   return { create, keywords };
