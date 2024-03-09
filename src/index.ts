@@ -6,9 +6,8 @@ interface Config {
   excludeSpaces?: boolean
   specialKeywords?: 'only' | 'mixed' | 'combine'
 }
-
-const getRandomIndex = (arr: string[]) => Math.floor(Math.random() * arr.length);
-const getRandomValue = (arr: string[]) => arr[getRandomIndex(arr)];
+const getRandomIndex: (arr: string[]) => number = (arr) => Math.floor(Math.random() * arr.length);
+const getRandomValue: (arr: string[]) => string = (arr) => arr[getRandomIndex(arr)];
 const useKeywordFarm = (option?: Config) => {
   const originKeywords = option?.lang === 'kr'
     ? ko
