@@ -10,7 +10,7 @@ const getRandomIndex: (arr: string[]) => number = (arr) => Math.floor(Math.rando
 const getRandomValue: (arr: string[]) => string = (arr) => arr[getRandomIndex(arr)];
 const useKeywordFarm = (option?: Config) => {
   const originKeywords = option?.lang === 'kr'
-    ? ko
+    ? kr
     : en;
   const currentKeyword = option === undefined
     ? originKeywords
