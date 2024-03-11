@@ -1,4 +1,4 @@
-import { specialKeywords, ko, en } from './assets';
+import { specialKeywords, kr, en } from './assets';
 
 interface Config {
   lang?: 'en' | 'kr'
