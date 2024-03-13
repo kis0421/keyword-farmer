@@ -1,6 +1,6 @@
 import { build } from 'esbuild';
 
-async function bundleESM() {
+async function bundleESM () {
   await build({
     entryPoints: ['./src/index.ts'],
     outdir: './dist/esm',
@@ -12,7 +12,7 @@ async function bundleESM() {
   });
 }
 
-async function main() {
+async function main () {
   await bundleESM();
 }
 
