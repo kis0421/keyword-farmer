@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc && node ./scripts/build.js",
     "prepublishOnly": "npm run build",
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:coverage": "jest --coverage"
   },
   "exports": {
     ".": {
